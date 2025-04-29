@@ -3,14 +3,17 @@
 # download_data.sh ─ Fetches the Kaggle “50-Car-Brands” dataset and extracts it into the "data" folder
 #
 # Prerequisites:
-#   • Install Kaggle CLI:  pip install kaggle
-#   • Add your Kaggle API token to ~/.kaggle/kaggle.json  **OR**
-#     export KAGGLE_USERNAME && KAGGLE_KEY in your shell.
+#   1. Install Kaggle CLI:  
+# pip install kaggle
+# export PATH=$PATH:~/.local/bin
+#   2 Add your Kaggle API token to ~/.kaggle/kaggle.json  **OR**
+# export KAGGLE_USERNAME=username
+# export KAGGLE_KEY=key
 
 set -e          # abort on first error
 set -o pipefail # catch errors in pipelines
 
-DATA_DIR="../data"
+DATA_DIR="./data"
 mkdir -p "$DATA_DIR"
 
 echo "⬇️  Downloading dataset to $DATA_DIR ..."

@@ -7,4 +7,6 @@ torch
 torchvision
 Pillow
 jupyterlab
+<<<<<<< HEAD
 kaggle>=1.5.12
+PIL
