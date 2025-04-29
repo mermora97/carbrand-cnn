@@ -30,7 +30,7 @@ bash scripts/download_data.sh
     - Performed **K-Means clustering** on the reduced embeddings, experimenting with different numbers of clusters (optimal around K ≈ 5–6).
     - Manually inspected the resulting clusters to identify and filter out groups containing non-car images or misclassified brand images.
 
-    <img src="docs/figures/face_cluster.png.png" width="600"/>
+    <img src="docs/figures/face_cluster.png" width="600"/>
     <img src="docs/figures/clustering_result.png" width="600"/>
 
 - Car vs Non-Car Filtering Using Pretrained Labels
