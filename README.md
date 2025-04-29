@@ -10,30 +10,36 @@ This repository contains a deep learning project aimed at classifying images int
 
 ## Table of Contents
 
-1. [1. Project Motivation](#project-overview)
-2. [2. Dataset](#dataset)
+1. [Project Motivation](#project-overview)
+2. [Dataset](#dataset)
 3. [Filtering and Preprocessing](#filtering-and-preprocessing)
     - [1. Car vs. Non-Car Classification](#1-car-vs-non-car-classification)
     - [2. Unsupervised Clustering](#2-unsupervised-clustering)
     - [3. Image Similarity / Outlier Detection](#3-image-similarity--outlier-detection)
 4. [Model Architecture](#model-architecture)
-5. [How to Use](#how-to-use)
-6. [Results](#results)
-7. [Contributing](#contributing)
-8. [License](#license)
+5. [Results](#results)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## 1. Project Motivation
 Car brand recognition powers applications ranging from automated insurance claims and smart traffic analytics to dealership inventory management. Real‑world images are messy, so this project focuses on cleaning the data first. With 50 brands, noisy labels, and real-world images, this dataset presents a challenging, multi-class classification problem that’s ideal for exploring deep learning techniques.
 
 ## 2. Dataset
-
 - Source: [Kaggle – 100 images of top 50 car brands](https://www.kaggle.com/datasets/yamaerenay/100-images-of-top-50-car-brands?select=companies.csv)  
-- Total Images: 4,598 (before filtering) ~ 100 images/brand  
+- Total Images: 4,598 across 50 car brands ≈ 100 per brand  
 - Challenges:
     - High intra‑class variance (angles, lighting, backgrounds).
-    - Severe label noise: non‑car images. Some categories (e.g., “Hudson”) include photos of people named Hudson rather than the Hudson car brand.
+    - Severe label noise: non‑car images e.g. “Hudson” folder include photos of people named Hudson instead of cars.
 
-You can download the dataset from Kaggle and place it in the `data/` folder within this repository (or update paths in the code accordingly).
+Here's a 4×5 grid of 20 randomly selected car-brand images from the original dataset:
+![Sample of 20 images](docs/figures/initial_sample.png)
+
+To download the data:
+- Run the helper script (recommended):
+```bash
+bash scripts/download_data.sh
+```
+- Or manually download the dataset from Kaggle and extract it into the data/ folder.
 
 ## 3. Methodology
 ### 3.1. Filtering and Preprocessing
