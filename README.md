@@ -2,13 +2,6 @@
 
 A deep‑learning project aimed at classifying **50 different car brands** in real‑world photographs. The project illustrates how data curation + transfer learning can turn a small, noisy dataset into a competitive image classifier.
 
-## Table of Contents
-
-1. [Project Motivation](#project-overview)
-2. [Dataset](#dataset)
-3. [Methodology](#methodology)
-4. [Results](#results)
-
 ## 1. Project Motivation
 Car brand recognition powers applications ranging from automated insurance claims and smart traffic analytics to dealership inventory management. Real‑world images are messy, so this project focuses on cleaning the data first. With 50 brands, noisy labels, and real-world images, this dataset presents a challenging, multi-class classification problem that’s ideal for exploring deep learning techniques.
 
