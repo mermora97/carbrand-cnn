@@ -2,24 +2,12 @@
 
 A deep‑learning project aimed at classifying **50 different car brands** in real‑world photographs. The project illustrates how data curation + transfer learning can turn a small, noisy dataset into a competitive image classifier.
 
-This repository contains a deep learning project aimed at classifying images into **50 different car brands**. The dataset comes from [Kaggle](https://www.kaggle.com/datasets/yamaerenay/100-images-of-top-50-car-brands?select=companies.csv) and consists of 4,598 images. However, it includes a significant amount of noisy data (e.g., photos of people named “Hudson” in the Hudson category). To tackle this noise problem, three primary filtering strategies have been applied:
-
-1. **Car vs. Non-Car Classification** (Transfer Learning with a ResNet50 model)
-2. **Unsupervised Clustering** (to group and eliminate non-car clusters)
-3. **Image Similarity / Outlier Detection** (to identify brand-specific outliers)
-
 ## Table of Contents
 
 1. [Project Motivation](#project-overview)
 2. [Dataset](#dataset)
-3. [Filtering and Preprocessing](#filtering-and-preprocessing)
-    - [1. Car vs. Non-Car Classification](#1-car-vs-non-car-classification)
-    - [2. Unsupervised Clustering](#2-unsupervised-clustering)
-    - [3. Image Similarity / Outlier Detection](#3-image-similarity--outlier-detection)
-4. [Model Architecture](#model-architecture)
-5. [Results](#results)
-6. [Contributing](#contributing)
-7. [License](#license)
+3. [Methodology](#methodology)
+4. [Results](#results)
 
 ## 1. Project Motivation
 Car brand recognition powers applications ranging from automated insurance claims and smart traffic analytics to dealership inventory management. Real‑world images are messy, so this project focuses on cleaning the data first. With 50 brands, noisy labels, and real-world images, this dataset presents a challenging, multi-class classification problem that’s ideal for exploring deep learning techniques.
@@ -32,7 +20,7 @@ Car brand recognition powers applications ranging from automated insurance claim
     - Severe label noise: non‑car images e.g. “Hudson” folder include photos of people named Hudson instead of cars.
 
 Here's a 4×5 grid of 20 randomly selected car-brand images from the original dataset:
-![Sample of 20 images](docs/figures/initial_sample.png)
+<img src="docs/figures/initial_sample.png" width="600"/>
 
 To download the data:
 - Run the helper script (recommended):
