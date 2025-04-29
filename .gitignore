@@ -172,3 +172,18 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Data folder
+data
+
+# VS Code Jupyter virtual files
+.virtual_documents/
+
+# Python & Jupyter artifacts
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+
+# Anaconda auto-generated project files
+anaconda_projects/
