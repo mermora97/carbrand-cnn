@@ -24,23 +24,21 @@ bash scripts/download_data.sh
 
 ## 3. Methodology
 ### 3.1. Filtering and Preprocessing
+- Unsupervised Clustering for Facial Image Recognition
+    - Used a pretrained model (e.g., from ResNet50’s penultimate layer) to extract each image **feature embeddings**.
+    - Used **PCA** to reduced embeddings dimensionality to 50 components for faster clustering.
+    - Performed **K-Means clustering** on the reduced embeddings, experimenting with different numbers of clusters (optimal around K ≈ 5–6).
+    - Manually inspected the resulting clusters to identify and filter out groups containing non-car images or misclassified brand images.
 
+    <img src="docs/figures/face_cluster.png.png" width="600"/>
+    <img src="docs/figures/clustering_result.png" width="600"/>
 
-### 1. Car vs. Non-Car Classification
-
-A **ResNet50** model pretrained on ImageNet is leveraged to identify whether an image contains a car. By mapping its output to known “car” or “vehicle” categories, images that are confidently not cars are filtered out.
-
-1. Load ResNet50 with ImageNet weights.
-2. Pass each image through the network.
-3. If the highest-probability class belongs to a non-car category, label the image as noise.
-
-### 2. Unsupervised Clustering
-
-For additional noise reduction, an unsupervised clustering method is used on **feature embeddings** extracted from a pretrained model:
-
-1. Extract feature vectors for each image (e.g., from ResNet50’s penultimate layer).
-2. Run a clustering algorithm (e.g., K-Means or DBSCAN) on the embeddings.
-3. Inspect each cluster to label entire clusters that do not contain cars or that clearly do not match their assigned brand category.
+- Car vs Non-Car Filtering Using Pretrained Labels
+    - Used a ResNet50 model pretrained on ImageNet to predict the top label for each image.
+    - For each image:
+      1. Passed it through ResNet50 to obtain the highest-probability label.
+      2. Checked if the predicted label matched any of the car-related keywords.
+      3. Labeled images as noise if their predicted label did not correspond to a car category.
 
 ### 3.2. Model Training 
 
