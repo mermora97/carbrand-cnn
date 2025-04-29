@@ -7,3 +7,4 @@ torch
 torchvision
 Pillow
 jupyterlab
+kaggle>=1.5.12
